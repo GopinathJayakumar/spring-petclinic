@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Dev Build to Start'
         git(url: 'https://github.com/GopinathJayakumar/spring-petclinic', branch: 'master', poll: true)
-        bat(script: 'mvnw package', label: 'Dev')
+        bat(script: 'mvn package', label: 'Dev')
       }
     }
 
