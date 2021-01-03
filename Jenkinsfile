@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Dev Build to Start'
         git(url: 'https://github.com/GopinathJayakumar/spring-petclinic', branch: 'master', poll: true)
-        powershell(script: 'mvnw install', label: 'Dev')
+        powershell(script: 'mvnw package', label: 'Dev')
         powershell 'java -jar target/*.jar'
       }
     }
